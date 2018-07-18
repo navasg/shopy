@@ -1,0 +1,72 @@
+*{
+	margin: 0;
+	padding: 0;
+	font-family:'Poppins', sans-serif;
+
+}
+
+.info-shopy {
+	display: flex;
+	justify-content: space-between;
+	height: 40px;
+	align-items: center;
+} 
+
+.info-shopy-phone {
+	color: #4c5b64;
+}
+
+.info-shopy-phone i{
+	color: #ff6e0f;
+}
+
+.info-shopy-social {
+	color: #4c5b64;
+}
+
+.img-single {
+	display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.single-item h3 {
+	font-weight: 900;
+	color: #ff6e0f;
+	margin-bottom: 20px;
+}
+
+.img-single div {
+	margin-left: 20%;
+}
+
+.single-item h4 {
+	color: #4c5b64;
+	font-weight: 700;
+	font-size: 15px;
+}
+
+.single-item p {
+	color: #4c5b64;
+	font-size: 15px;
+	margin-bottom: 40px;
+} 
+
+.single-item span {
+	color: #ff6e0f;
+	margin-left: 40px;
+}
+
+.slick-dotted.slick-slider {
+	display: flex;
+	align-items: center;
+}
+
+.slick-dots {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin-left: 10%;
+	width: auto;
+	bottom: initial;
+}
