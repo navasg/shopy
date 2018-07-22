@@ -8,26 +8,46 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css">
   <link rel="stylesheet" type="text/css" href="assets/css/main.css">
+  <link rel="stylesheet" type="text/css" href="assets/css/animate.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,800,900" rel="stylesheet">
+	<script type="text/javascript" src="assets/js/wow.js"></script>
   <link href="https://fonts.googleapis.com/css?family=Poppins:400,700" rel="stylesheet">
 </head>
+
+<script>
+	wow = new WOW(
+    {
+      animateClass: 'animated',
+      offset:       100,
+      callback:     function(box) {
+        console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+      }
+    }
+  );
+  wow.init();
+</script>
 <body>
 	<header>
-		<div class="container">
+		<div class="content-shopy">
 			<div class="info-shopy">
 				<div class="info-shopy-phone">
-					<i class="fa fa-envelope-o mr-1" aria-hidden="true"></i> info@shopy.com
+					<i class="fa fa-envelope-o mr-1" aria-hidden="true"></i> <a href="mailto:info@shopy.com"> info@shopy.com</a>
 					<i class="fa fa-phone ml-3 mr-1" aria-hidden="true"></i> 453-5553-996
 				</div>
 				<div class="info-shopy-social">
-					<i class="fa fa-facebook mr-1"></i>
-					<i class="fa fa-twitter mr-1"></i>
-					<i class="fa fa-google mr-1"></i>
+					<i class="fa fa-facebook"></i>
+					<i class="fa fa-twitter"></i>
+					<i class="fa fa-google"></i>
 					<i class="fa fa-instagram"></i>
 				</div>
 			</div>
+		</div>
+		<hr>
+		<div class="content-shopy">
 			<nav class="pl-0 pr-0 navbar navbar-expand-lg navbar-light">
-		  	<a class="navbar-brand" href="#">Navbar</a>
+		  	<a class="navbar-brand" href="#">
+		  		<img src="assets/img/logo.jpg">
+		  	</a>
 		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 		    <span class="navbar-toggler-icon"></span>
 		  	</button>
@@ -37,36 +57,281 @@
 		        	<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
 		      	</li>
 		      	<li class="nav-item">
-		        	<a class="nav-link" href="#">Products</a>
+		        	<a class="nav-link" href="#products">Products</a>
 		      	</li>
 		      	<li class="nav-item">
-		       		<a class="nav-link" href="#">Hot Deals</a>
+		       		<a class="nav-link" href="#hot-deals">Hot Deals</a>
 		     		</li>
 		     		<li class="nav-item">
-		       		<a class="nav-link" href="#">About</a>
+		       		<a class="nav-link" href="#about">About</a>
 		     		</li>
 		     		<li class="nav-item">
-		       		<a class="nav-link" href="#">Contact</a>
+		       		<a class="nav-link" href="#contact">Contact</a>
 		     		</li>
 		    	</ul>
 		  	</div>
 		  	<i class="fa fa-search" aria-hidden="true"></i>
+		  	<i class="fa fa-shopping-cart " aria-hidden="true"></i>
+		  	<i class="fa fa-user-o" aria-hidden="true"></i>
 			</nav>
 		</div>
 		<div class="single-item">
-		  <div class="img-single" style="background-color: #efecec; height: 600px;">
+		  <div class="img-single" style="background-image: url(assets/img/bg-1.jpg); background-size: cover; height: 600px;">
 		  	<div>
 			  	<h3>FULL WINTER KIT</h3>
 			  	<h4>Half Jacket + Skiny + Trousers + Boot leather</h4>
 			  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 			  	tempor incididunt.</p>
-			  	<h4>Price: 120$ <span><i class="fa fa-shopping-cart" aria-hidden="true"></i>Order Now</span></h4>
+			  	<h4>Price: 120$ <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Now</span></h4>
 		  	</div>
 		  </div>
-		  <div></div>
-		  <div></div>
+		  <div class="img-single" style="background-image: url(assets/img/bg-1.jpg); background-size: cover; height: 600px;"">
+		  	<div>
+			  	<h3>FULL WINTER KIT</h3>
+			  	<h4>Half Jacket + Skiny + Trousers + Boot leather</h4>
+			  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			  	tempor incididunt.</p>
+			  	<h4>Price: 120$ <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Now</span></h4>
+		  	</div>
+		  </div>
+		  <div>
+		  	<div class="img-single" style="background-image: url(assets/img/bg-1.jpg); background-size: cover; height: 600px;">
+		  		<div>
+				  	<h3>FULL WINTER KIT</h3>
+				  	<h4>Half Jacket + Skiny + Trousers + Boot leather</h4>
+				  	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				  	tempor incididunt.</p>
+				  	<h4>Price: 120$ <span><i class="fa fa-shopping-cart" aria-hidden="true"></i> Order Now</span></h4>
+		  		</div>
+		  	</div>
+		  </div>
 		</div>	
 	</header>
+	<section class="products" id="products">
+		<div class="container-shopy">
+			<h3 class=""><span>NEW</span> ARRIVALS</h3>
+			<p class="text-center mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+			<div class="content-card">
+				<div class="card item-card wow bounceInRight" data-wow-duration="1s" style="width: 18rem;">
+				  <img class="card-img-top" src="assets/img/product-1.jpg" alt="Card image cap">
+				  <div class="card-body card-body-products">
+   			 		<p class="card-text">Rebok Track Jacket</p>
+   			 		<h3>100$</h3>
+   			 		<div class="info-products">
+   			 			<p>Size: s-m-l-xl</p>
+   			 			<ul>
+   			 				<li style="background-color: #e94850"></li>
+   			 				<li style="background-color: #44525f"></li>
+   			 				<li style="background-color: #43c0fd"></li>
+   			 				<li style="background-color: #30db79"></li>
+   			 			</ul>
+   			 			<span>
+   			 				<i class="fa fa-globe" aria-hidden="true"></i>
+	   			 			<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+	   			 			<i class="fa fa-heart-o" aria-hidden="true"></i>
+   			 			</span>
+   			 		</div>
+ 					</div>
+				</div>
+				<div class="card item-card wow bounceInRight" data-wow-duration="1.5s" style="width: 18rem;">
+				  <img class="card-img-top" src="assets/img/product-2.jpg" alt="Card image cap">
+				  <div class="card-body card-body-products">
+   			 		<p class="card-text">Rebok Track Jacket</p>
+   			 		<h3>100$</h3>
+   			 		<div class="info-products">
+   			 			<p>Size: s-m-l-xl</p>
+   			 			<ul>
+   			 				<li style="background-color: #e94850"></li>
+   			 				<li style="background-color: #44525f"></li>
+   			 				<li style="background-color: #43c0fd"></li>
+   			 				<li style="background-color: #30db79"></li>
+   			 			</ul>
+   			 			<span>
+   			 				<i class="fa fa-globe" aria-hidden="true"></i>
+	   			 			<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+	   			 			<i class="fa fa-heart-o" aria-hidden="true"></i>
+   			 			</span>
+   			 		</div>
+ 					</div>
+				</div>
+				<div class="card item-card wow bounceInRight" data-wow-duration="2s" style="width: 18rem;">
+				  <img class="card-img-top" src="assets/img/product-2.jpg" alt="Card image cap">
+				  <div class="card-body card-body-products">
+   			 		<p class="card-text">Rebok Track Jacket</p>
+   			 		<h3>100$</h3>
+   			 		<div class="info-products">
+   			 			<p>Size: s-m-l-xl</p>
+   			 			<ul>
+   			 				<li style="background-color: #e94850"></li>
+   			 				<li style="background-color: #44525f"></li>
+   			 				<li style="background-color: #43c0fd"></li>
+   			 				<li style="background-color: #30db79"></li>
+   			 			</ul>
+   			 			<span>
+   			 				<i class="fa fa-globe" aria-hidden="true"></i>
+	   			 			<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+	   			 			<i class="fa fa-heart-o" aria-hidden="true"></i>
+   			 			</span>
+   			 		</div>
+ 					</div>
+				</div>
+				<div class="card item-card wow bounceInRight" data-wow-duration="2.5s" style="width: 18rem;">
+				  <img class="card-img-top" src="assets/img/product-1.jpg" alt="Card image cap">
+				  <div class="card-body card-body-products">
+   			 		<p class="card-text">Rebok Track Jacket</p>
+   			 		<h3>100$</h3>
+   			 		<div class="info-products">
+   			 			<p>Size: s-m-l-xl</p>
+   			 			<ul>
+   			 				<li style="background-color: #e94850"></li>
+   			 				<li style="background-color: #44525f"></li>
+   			 				<li style="background-color: #43c0fd"></li>
+   			 				<li style="background-color: #30db79"></li>
+   			 			</ul>
+   			 			<span>
+   			 				<i class="fa fa-globe" aria-hidden="true"></i>
+	   			 			<i class="fa fa-shopping-cart" aria-hidden="true"></i>
+	   			 			<i class="fa fa-heart-o" aria-hidden="true"></i>
+   			 			</span>
+   			 		</div>
+ 					</div>
+				</div>
+			</div>
+			<div class="products-more-view">
+				<ul>
+					<li class="mr-1"></li>
+					<li class="mr-1"></li>
+					<li class="mr-1"></li>
+				</ul>
+			</div>
+			<div class="content-products">
+				<div class="products-items-1"> 
+					<div>
+						<div class="products-diamond">
+							<div class="text-diamond"><p>Sale 50%</p></div>
+						</div>
+					</div>
+					<div>
+						<h4>FULL WINTER KIT</h4>
+						<p>Half Jacket + Skiny + Trousers + Boot leather</p>
+					</div>
+					<div>
+						<h5><i class="fa fa-cart-plus mr-1" aria-hidden="true"></i>120$</h5>
+					</div>
+				</div>
+				<div class="products-items-2">
+					<p>adv<span class="ml-1">area</span></p>
+					<h4>470x100</h4>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="hot-deals" id="hot-deals">
+		<div class="container-shopy">
+			<h3><span>BEST</span> SALES</h3>
+			<p class="text-center mt-3">Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+			<div class="content-products">
+				<div class="card item-card-deals wow bounceInRight" data-wow-duration="1s" style="width: 18rem;">
+				  <img class="card-img-top" src="assets/img/product-4.jpg" alt="Card image cap">
+				  <div class="card-body card-body-deals">
+				    <h4 class="card-text">Rebok Track Jacket</h4>
+				    <span class="star">
+				    	<i class="fa fa-star" aria-hidden="true"></i>
+				    	<i class="fa fa-star" aria-hidden="true"></i>
+				    	<i class="fa fa-star" aria-hidden="true"></i>
+				    	<i class="fa fa-star" aria-hidden="true"></i>
+				    </span>
+				    <h5>100$</h5>
+				    <span class="card-hover">
+				    <a href="#">
+				    	<i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i> Add to cart</a> 
+				    </span>
+				  </div>
+				</div>
+				<div class="card item-card-deals wow bounceInRight" data-wow-duration="1.5s" style="width: 18rem;">
+				  <img class="card-img-top" src="assets/img/product-4.jpg" alt="Card image cap">
+				  <div class="card-body card-body-deals">
+				    <h4 class="card-text">Rebok Track Jacket</h4>
+				    <span class="star">
+				    	<i class="fa fa-star" aria-hidden="true"></i>
+				    	<i class="fa fa-star" aria-hidden="true"></i>
+				    	<i class="fa fa-star" aria-hidden="true"></i>
+				    	<i class="fa fa-star" aria-hidden="true"></i>
+				    </span>
+				    <h5>100$</h5>
+				    <span class="card-hover">
+				    <a href="#">
+				    	<i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i> Add to cart</a> 
+				    </span>
+				  </div>
+				</div>
+				<div class="card item-card-deals wow bounceInRight" data-wow-duration="2s" style="width: 18rem;">
+				  <img class="card-img-top" src="assets/img/product-4.jpg" alt="Card image cap">
+				  <div class="card-body card-body-deals">
+				    <h4 class="card-text">Rebok Track Jacket</h4>
+				    <span class="star">
+				    	<i class="fa fa-star" aria-hidden="true"></i>
+				    	<i class="fa fa-star" aria-hidden="true"></i>
+				    	<i class="fa fa-star" aria-hidden="true"></i>
+				    	<i class="fa fa-star" aria-hidden="true" style="color: #ebebec"></i>
+				    </span>
+				    <h5>100$</h5>
+				   	<span class="card-hover">
+				    <a href="#">
+				    	<i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i> Add to cart</a> 
+				    </span>
+				  </div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="about" id="about">
+		<div class="container-shopy">
+			<div class=content-about>
+				<div>
+					<h3 class="">NEWS <br> LETTER</h3>
+					<p class="">join us now to get all news and special offers</p>
+				</div>
+				<div>
+				<form>
+					<i class="fa fa-envelope-o mr-1" aria-hidden="true"></i>
+					<input class="about-email" type="email" name="email" placeholder="type your email here">
+					<button class="btn-orange"> <a href="#">join us</a></button>
+				</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer id="contact">
+		<div class="container-shopy contact">
+			<div>
+				<img src="assets/img/logo.jpg">
+				<p >Shopy c 2015. your copy right here </p>
+			</div>
+			<ul>
+				<li>about us</li>
+				<li>contact us</li>
+				<li>support</li>
+			</ul>
+			<ul>
+				<li>our feed</li>
+				<li>terms and conditions</li>
+				<li>our privacy</li>
+			</ul>
+			<ul>
+				<li>join us</li>
+				<li>live support</li>
+			</ul>
+			<div class="contact-payment">
+				<h3>Payment Methods</h3>
+				<span>	
+					<i class="fa fa-cc-mastercard" aria-hidden="true"></i>
+					<i class="fa fa-cc-paypal" aria-hidden="true"></i>
+					<i class="fa fa-cc-visa" aria-hidden="true"></i>
+				</span>
+			</div>
+		</div>
+	</footer>
 <script src="assets/js/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="assets/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
