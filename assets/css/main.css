@@ -33,11 +33,11 @@ i {
 	transition: .5s;
 }
 .info-shopy {
-	display: flex;
-	justify-content: space-between;
-	height: 40px;
 	align-items: center;
-	font-size: 10px;
+	display: flex;
+	font-size: 12px;
+	height: 40px;
+	justify-content: space-between;
 } 
 
 .info-shopy-phone {
@@ -110,11 +110,14 @@ header hr {
 
 .slick-dots {
 	display: flex;
+	bottom: initial;
 	flex-direction: column;
 	justify-content: center;
 	margin-left: 10%;
+	position: absolute;
+	left: 0;
 	width: auto;
-	bottom: initial;
+	
 }
 
 .slick-dots li button {
@@ -213,7 +216,7 @@ header hr {
 }
 
 .item-card:hover {
-	box-shadow:  3px 3px rgba(0, 0, 0, .1);
+	box-shadow:  1px 3px 10px rgba(0, 0, 0, .1);
 	transition: .5s;
 }
 
@@ -228,17 +231,17 @@ header hr {
 	background-color: #fff;
 	display: flex;
 	height: 50px;
-	margin-top: 60px;
 	justify-content: center;
+	margin-top: 60px;
 }
 
 
 .products-more-view ul {
 	list-style: none;
+	cursor: pointer;
 	display: flex;
 	margin-top: 0;
 	margin-bottom: 0;
-	cursor: pointer;
 }
 
 .products-more-view ul li {
@@ -286,9 +289,9 @@ header hr {
 	border:1px solid #efefef;
 	display: flex;
 	justify-content: space-between;
-  margin-right: 30px;
-  padding: 20px 40px;
-  text-align: left;
+  	margin-right: 30px;
+  	padding: 20px 40px;
+  	text-align: left;
 	width: 70%;
 }
 
@@ -407,7 +410,7 @@ header hr {
 }
 
 .item-card-deals:hover {
-	box-shadow:  3px 3px rgba(0, 0, 0, .1);
+	box-shadow:  1px 3px 10px rgba(0, 0, 0, .1);
 	transition: .5s;
 }
 
@@ -474,10 +477,11 @@ header hr {
 }
 
 .content-about p {
-  align-items: center;
+  	align-items: center;
 	color: #4c5b64;
 	display: flex;
 	margin-bottom: 0;
+	margin-left: 20px;
 }
 
 .content-about div {
@@ -492,22 +496,22 @@ header hr {
 }
 
 .about-email::placeholder {
-  color: #bababd;
+	color: #bababd;
 	font-style: italic;
 } 
 
 .btn-orange {
-  background-color: #ff6e0f;
-  border: none;
-  cursor: pointer;
- 	height: 55px;
-  width: 100px;
-  transition: .5s;
+	background-color: #ff6e0f;
+	border: none;
+	cursor: pointer;
+	height: 55px;
+	width: 100px;
+	transition: .5s;
 }
 
 .btn-orange a {
-  color: #fff;
-  font-weight: 600;
+	color: #fff;
+	font-weight: 600;
 	text-decoration: none;
 }
 
@@ -530,7 +534,7 @@ header hr {
 	color: #4c5b64;
 	cursor: pointer;
 	margin-bottom: 5px;
-  margin-top: 5px;
+  	margin-top: 5px;
 }
 
 .contact ul li:hover, .contact i:hover {
@@ -697,7 +701,7 @@ footer {
 
 	.content-about form input {
 		font-size: 10px;
-		width: 100px;
+		width: 110px;
 	}
 
 	.content-about i {
@@ -736,5 +740,11 @@ footer {
 
 	.contact {
 		justify-content: space-between;
+	}
+}
+@media screen and (min-width: 768px) and (max-width: 921px)
+{
+	.container-shopy, .content-shopy {
+		padding: 0px 20px;
 	}
 }
