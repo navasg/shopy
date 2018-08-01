@@ -21,6 +21,15 @@
     flex-direction: column;
     justify-content: center;
 
+    label {
+      color: #4c5b64;
+      margin: 0;
+    }
+
+    input {
+      width: 100px;
+    }
+
     .details-product {
       display: flex;
       justify-content: space-between;
@@ -30,19 +39,24 @@
         font-size: 15px;
         font-weight: 900;
         text-align: center;
-
       }
 
       ul {
+        align-items: center;
         display: flex;
         justify-content: center;
         list-style: none;
 
         li {
-          border-radius: 10px;
-          height: 15px;
-          margin: 5px;
-          width: 15px;
+          color: #4c5b64;
+          font-weight: 700;
+
+          button {
+            border-radius: 10px;
+            height: 20px;
+            margin: 5px;
+            width: 20px;
+          }
         }
       }
     }
@@ -127,5 +141,67 @@
 
 .frecuent{
   background-color: #f7f8fa;
-  height: 400px;
+  height: 500px;
+
+  p {
+    color: #4c5b64;
+    font-size: 15px;
+  }
+  
+  h3 {
+    color: #ff6e0f;
+    font-weight: 900;
+    text-align: center;
+
+    }
+
+  // .item {
+  //   width: calc(100%/3);
+  //   float: left;
+  //   overflow: hidden;
+  //   margin-top: 20px;
+  //   position: relative;
+    
+  //   .img-item {
+  //     background-size: cover;
+  //     width: 80%;
+  //     height: 300px;
+  //     display: block;
+  //     transition: all 0.5s ease;
+  //     -webkit-filter: grayscale(85%);
+  //     filter: grayscale(85%);
+  //     transition: all 0.3s ease;
+  //   }
+
+  //   .text1 {
+  //     position: absolute;
+  //     bottom: 5%;
+  //     left: 20px;
+  //     color: #ffffff;
+  //     transition: all 0.5s ease;
+  //     cursor: pointer;
+      
+  //     p {
+  //       text-align: left;
+  //       opacity: 0;
+  //     }
+
+  //     h3 {
+  //       text-align: start;
+  //     }
+  //   }
+
+  // }
+
+  // .e1:hover .img-item {
+  //   -webkit-filter: grayscale(0%);
+  //   filter: grayscale(0%);
+  // }
+  // .e1:hover .text1 {
+  //   position: absolute;
+  //   bottom: 10%;
+  // }
+  // .e1:hover p {
+  //   opacity: 1;
+  // }
 }

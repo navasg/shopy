@@ -15,7 +15,7 @@
               .img-product{:style => "background-image: url(assets/img/img-product-3.jpg);"}
               .img-product{:style => "background-image: url(assets/img/img-product-4.jpg);"}
           .description-product
-            %h3 Rebok Track Jacket
+            %h3 REBOK TRACK JACKET
             %p 
               Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
               tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -35,27 +35,45 @@
                   %option
                     Large
               %ul 
-                %li{:style => "background-color: #e94850"}
-                %li{:style => "background-color: #44525f"}
-                %li{:style => "background-color: #43c0fd"}
-                %li{:style => "background-color: #30db79"}
-              / %form
-              /   %label
-              /     Color
-              /   %select
-              /     %option
-              /       Blue
-              /     %option
-              /       Pink
-              /     %option
-              /       Green
-              /     %option
-              /       Gray
+                %li Color
+                %li 
+                  %button{:style => "background-color: #e94850"} 
+                %li
+                  %button{:style => "background-color: #44525f"}
+                %li
+                  %button{:style => "background-color: #43c0fd"}
+                %li
+                  %button{:style => "background-color: #30db79"}
+              %form
+                %label Cant
+                %input{:type => "number", :min => 0}/
             .product-pricing
               %h3 Price: 100$
               %button.btn-orange Buy
     %section.frecuent
-      
+      .container-shopy
+        %h3 RELATED PRODUCT
+        %p.text-center.mt-3 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+        .content-card
+          - 4.times do
+            .card.item-card.wow.bounceInRight{"data-wow-duration" => "1.5s", :style => "width: 18rem;"}
+              = link_to app_product_path do
+                %img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-2.jpg"}/
+                .card-body.card-body-products
+                  = link_to app_product_path do
+                    %p.card-text Rebok Track Jacket
+                  %h3 100$
+                  .info-products
+                    %p Size: s-m-l-xl
+                    %ul
+                      %li{:style => "background-color: #e94850"}
+                      %li{:style => "background-color: #44525f"}
+                      %li{:style => "background-color: #43c0fd"}
+                      %li{:style => "background-color: #30db79"}
+                    %span
+                      %i.fa.fa-globe{"aria-hidden" => "true"}
+                      %i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+                      %i.fa.fa-heart{"aria-hidden" => "true"}
     = render 'app/front/partials/footer'
     %script{:src => "assets/js/jquery-3.2.1.min.js"}
     %script{:src => "assets/js/bootstrap.min.js", :type => "text/javascript"}

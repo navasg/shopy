@@ -66,78 +66,26 @@
 					ARRIVALS
 				%p.text-center.mt-3 Lorem ipsum dolor sit amet, consectetur adipisicing elit
 				.content-card
-					.card.item-card.wow.bounceInRight{"data-wow-duration" => "1.5s", :style => "width: 18rem;"}
-						= link_to app_product_path do
-							%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-2.jpg"}/
-							.card-body.card-body-products
-								= link_to app_product_path do
-									%p.card-text Rebok Track Jacket
-								%h3 100$
-								.info-products
-									%p Size: s-m-l-xl
-									%ul
-										%li{:style => "background-color: #e94850"}
-										%li{:style => "background-color: #44525f"}
-										%li{:style => "background-color: #43c0fd"}
-										%li{:style => "background-color: #30db79"}
-									%span
-										%i.fa.fa-globe{"aria-hidden" => "true"}
-										%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
-										%i.fa.fa-heart{"aria-hidden" => "true"}
-					.card.item-card.wow.bounceInRight{"data-wow-duration" => "1.5s", :style => "width: 18rem;"}
-						= link_to app_product_path do
-							%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-2.jpg"}/
-							.card-body.card-body-products
-								= link_to app_product_path do
-									%p.card-text Rebok Track Jacket
-								%h3 100$
-								.info-products
-									%p Size: s-m-l-xl
-									%ul
-										%li{:style => "background-color: #e94850"}
-										%li{:style => "background-color: #44525f"}
-										%li{:style => "background-color: #43c0fd"}
-										%li{:style => "background-color: #30db79"}
-									%span
-										%i.fa.fa-globe{"aria-hidden" => "true"}
-										%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
-										%i.fa.fa-heart{"aria-hidden" => "true"}
-					.card.item-card.wow.bounceInRight{"data-wow-duration" => "2s", :style => "width: 18rem;"}
-						= link_to app_product_path do
-							%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-2.jpg"}/
-							.card-body.card-body-products
-								= link_to app_product_path do
-									%p.card-text Rebok Track Jacket
-								%h3 100$
-								.info-products
-									%p Size: s-m-l-xl
-									%ul
-										%li{:style => "background-color: #e94850"}
-										%li{:style => "background-color: #44525f"}
-										%li{:style => "background-color: #43c0fd"}
-										%li{:style => "background-color: #30db79"}
-									%span
-										%i.fa.fa-globe{"aria-hidden" => "true"}
-										%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
-										%i.fa.fa-heart{"aria-hidden" => "true"}
-					.card.item-card.wow.bounceInRight{"data-wow-duration" => "2.5s", :style => "width: 18rem;"}
-						= link_to app_product_path do
-							%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-1.jpg"}/
-							.card-body.card-body-products
-								= link_to app_product_path do
-									%p.card-text Rebok Track Jacket
-								%h3 100$
-								.info-products
-									%p Size: s-m-l-xl
-									%ul
-										%li{:style => "background-color: #e94850"}
-										%li{:style => "background-color: #44525f"}
-										%li{:style => "background-color: #43c0fd"}
-										%li{:style => "background-color: #30db79"}
-									%span
-										%i.fa.fa-globe{"aria-hidden" => "true"}
-										%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
-										%i.fa.fa-heart{"aria-hidden" => "true"}
+					=
+					- 4.times do
+						.card.item-card.wow.bounceInRight{"data-wow-duration" => "1.5s", :style => "width: 18rem;"}
+							= link_to app_product_path do
+								%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-2.jpg"}/
+								.card-body.card-body-products
+									= link_to app_product_path do
+										%p.card-text Rebok Track Jacket
+									%h3 100$
+									.info-products
+										%p Size: s-m-l-xl
+										%ul
+											%li{:style => "background-color: #e94850"}
+											%li{:style => "background-color: #44525f"}
+											%li{:style => "background-color: #43c0fd"}
+											%li{:style => "background-color: #30db79"}
+										%span
+											%i.fa.fa-globe{"aria-hidden" => "true"}
+											%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+											%i.fa.fa-heart{"aria-hidden" => "true"}
 				.products-more-view
 					%ul
 						%li.mr-1
