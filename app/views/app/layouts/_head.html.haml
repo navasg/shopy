@@ -2,6 +2,14 @@
 = render 'app/layouts/meta_tags'
 
 // Stylesheets
+%meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+%title SHOPY ECOMMERCE
+%meta{:charset => "utf-8"}
+%meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+%link{:href => "/assets/css/bootstrap.css", :rel => "stylesheet", :type => "text/css"}/
+%link{:href => "/assets/fonts/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}/
+%link{:href => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css", :rel => "stylesheet", :type => "text/css"}/
+%link{:href => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css", :rel => "stylesheet", :type => "text/css"}/
 = stylesheet_link_tag 'app/application', media: 'all', 'data-turbolinks-track' => true
 = stylesheet_link_tag 'https://fonts.googleapis.com/css?family=Patua+One'
 = stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css'
@@ -12,3 +20,8 @@
 
 // Google Analytics
 = render 'app/layouts/google_analytics'
+
+/ %link{:href => "/assets/css/main.css", :rel => "stylesheet", :type => "text/css"}/
+%link{:href => "/assets/css/animate.css", :rel => "stylesheet", :type => "text/css"}/
+%link{:href => "https://fonts.googleapis.com/css?family=Montserrat:400,700,800,900", :rel => "stylesheet"}/
+%link{:href => "https://fonts.googleapis.com/css?family=Poppins:400,700", :rel => "stylesheet"}/

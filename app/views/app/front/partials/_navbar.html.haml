@@ -1,0 +1,36 @@
+.content-shopy
+  .info-shopy
+    .info-shopy-phone
+      %i.fa.fa-envelope.mr-1{"aria-hidden" => "true"}
+      %a{:href => "mailto:info@shopy.com"} info@shopy.com
+      %i.fa.fa-phone.ml-3.mr-1{"aria-hidden" => "true"}
+      453-5553-996
+    .info-shopy-social
+      %i.fab.fa-facebook
+      %i.fab.fa-twitter
+      %i.fab.fa-google
+      %i.fab.fa-instagram
+%hr/
+.content-shopy
+  %nav.pl-0.pr-0.navbar.navbar-expand-lg.navbar-light
+    %a.navbar-brand{:href => "/#"}
+      %img{:src => "assets/img/logo.jpg"}/
+    %button.navbar-toggler{"aria-controls" => "navbarNav", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarNav", "data-toggle" => "collapse", :type => "button"}
+      %span.navbar-toggler-icon
+    #navbarNav.collapse.navbar-collapse
+      %ul.navbar-nav
+        %li.nav-item.active
+          %a.nav-link{:href => "/#home"}
+            Home
+            %span.sr-only (current)
+        %li.nav-item
+          %a.nav-link{:href => "/#products"} Products
+        %li.nav-item
+          %a.nav-link{:href => "/#hot-deals"} Hot Deals
+        %li.nav-item
+          %a.nav-link{:href => "/#about"} About
+        %li.nav-item
+          %a.nav-link{:href => "/#contact"} Contact
+    %i.fa.fa-search{"aria-hidden" => "true"}
+    %i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+    %i.fa.fa-user{"aria-hidden" => "true"}

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   end
 
   root to: 'app/front#index'
+  get '/product', to: 'app/front#product', as: :app_product
 
   devise_for :users, skip: KepplerConfiguration.skip_module_devise
   post '/filter', to: 'admin/users#filter_by_role', as: :filter_by_role

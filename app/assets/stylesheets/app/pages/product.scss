@@ -1,0 +1,131 @@
+.product {
+  background-color: #f7f8fa;
+  height: 550px;
+
+  h3 {
+    color: #ff6e0f;
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  p {
+    color: #4c5b64;
+    line-height: 26px;
+    text-align: justify;
+  }
+
+  .description-product {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .details-product {
+      display: flex;
+      justify-content: space-between;
+      margin: 20px 0;
+
+      p {
+        font-size: 15px;
+        font-weight: 900;
+        text-align: center;
+
+      }
+
+      ul {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+
+        li {
+          border-radius: 10px;
+          height: 15px;
+          margin: 5px;
+          width: 15px;
+        }
+      }
+    }
+    .product-pricing {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+
+      h3 {
+        font-weight: normal;
+        margin: 0 20px;
+      }
+
+      .btn-orange {
+        color: #fff;
+        font-size: 20px;
+        margin: 0 20px; 
+      }
+    }
+
+    @include respond-to (xs) {
+      width: 100%;
+    }
+  }
+  @include respond-to (xs) {
+      height: 100%;
+  }
+}
+
+.product-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.single-product{
+
+  .slick-list, .draggable {
+    width: 80%
+  }
+
+  .slick-track {
+    width: 80%;
+  }
+  
+  .slick-dots {
+    width: 80%;
+    bottom: 0px;
+    li {
+      width: auto;
+
+      button {
+        height: 10px;
+        background: rgb(255, 255, 255);
+
+        &:before {
+          background-color: #fff;
+          content: " ";
+          height: 10px;
+        }   
+      }
+    } 
+  }
+}
+.slick-dots li.slick-active button:before {
+  background-color: #ff6e0f;
+  height: 10px;
+}
+
+.carousel {
+  margin-top: 30px;
+  width: 50%;
+
+  @include respond-to (xs) {
+    width: 100%;
+  }
+}
+.img-product {
+  background-size: cover;
+  height: 450px;
+  width: 80%;
+}
+
+.frecuent{
+  background-color: #f7f8fa;
+  height: 400px;
+}

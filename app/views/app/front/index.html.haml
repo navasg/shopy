@@ -1,230 +1,263 @@
 !!!
 %html
-  %header
-    = render 'app/layouts/head'
-  %body
-    %header
-      = #render 'app/layouts/navigation'
-    %main#keppler{:role => "main"}
-      = #render 'app/layouts/messages'
-      .front
-        .front-logo
-          = image_tag "app/keppler-front.png", class: "img-responsive"
-
-        .front-social
-          %ul
-            %li
-              =  link_to "https://twitter.com/slicegroupxyz", target: '_blank' do
-                = icon 'fab', 'twitter'
-            %li
-              =  link_to "https://www.facebook.com/slicegroupxyz/", target: '_blank' do
-                = icon 'fab', 'facebook'
-            %li
-              =  link_to "https://www.instagram.com/slicegroupxyz/", target: '_blank' do
-                = icon 'fab', 'instagram'
-            %li
-              =  link_to "https://github.com/SliceDevelopers", target: '_blank' do
-                = icon 'fab', 'github'
-        .mouse-scroll
-          .mouse
-            .scroll
-        %footer.front-footer
-          = render 'app/layouts/footer'
-
-
-      %section#documentation
-        %h3 KEPPLER ADMIN
-
-        %p
-          KEPPLER ADMIN es un CMS con un entorno de desarrollo que cuenta con
-          una base de gemas ya integradas, de tal forma que acelerará el
-          desarrollo de aplicaciones de vanguardia bajo la plataforma de Ruby
-          on Rails.
-
-        %h3 Características
-
-        %ul
-          %li
-            Base de datos por defecto PostreSQL
-          %li
-            Integración para autenticación de usuarios con
-            = link_to 'Devise', 'https://github.com/plataformatec/devise', target: '_blank'
-          %li
-            Integración para roles de usuarios con
-            = link_to 'Rolify', 'https://github.com/RolifyCommunity/rolify', target: '_blank'
-          %li
-            Integración para autorizaciones con
-            = link_to 'Pundit', 'https://github.com/varvet/pundit', target: '_blank'
-          %li
-            Inegración para el manejo de de paginación con
-            = link_to 'Kaminari', 'https://github.com/amatsuda/kaminari', target: '_blank'
-          %li
-            Integración para helpers de formularios con
-            = link_to 'SimpleForm', 'https://github.com/RolifyCommunity/rolify', target: '_blank'
-          %li
-            Integración para búsquedas full-text con
-            = link_to 'Ransack', 'https://github.com/activerecord-hackery/ransack', target: '_blank'
-          %li
-            Integración con framework fronte-end para el administrativo con
-            = link_to 'AdminLTE', 'https://adminlte.io', target: '_blank'
-          %li
-            Integración con framework javascript
-            = link_to 'VueJS', 'https://vuejs.org/', target: '_blank'
-          %li
-            Integración sitemap dinamicos con
-            = link_to 'Sitemap Generator', 'https://github.com/kjvarga/sitemap_generator', target: '_blank'
-
-        %h3 Gema de Keppler
-
-        %h4 Instalación
-
-        %p Una de las novedades de Keppler Admin v2.0 es el lanzamiento de una gema que nos
-        permite el fácil y rápido manejo de las funcionalidades del CMS. Para instalarlo
-        necesitamos ejecutar el siguiente comando desde la consola:
-
-        %pre
-          %code.ruby
-            gem install keppler`
-
-        %h4 Lista de comandos
-
-        %p Para verificar que está instalada la gema correctamente y ver una lista de los posibles comandos
-        que podemos utilizar, ejecutamos:
-
-        %pre
-          %code.ruby
-            keppler
-
-        %h4 Nuevo Proyecto
-
-        %p Para crear un nuevo proyecto en Ruby on Rails con Keppler Admin, podemos ejecutar:
-
-        %pre
-          %code.ruby
-            keppler new NuevoProyecto
-
-        %h4 Creación del archivo secrets.yml
-
-        %p
-          Si detienes el proceso a la mitad o aún no tienes configurado un archivo secrets.yml con la configuración de
-          la base de datos y otros inicializadores, puedes crear la base de datos ejecutando:
-
-        %pre
-          %code.ruby
-            keppler db_conf
-
-        %h4 Instalación de las dependencias
-
-        %p
-          Antes de poder iniciar con un proyecto nuevo, primero debemos instalar todas las gemas
-          instanciadas en el Gemfile, ubicado en la raíz del proyecto, con el comando:
-
-        %pre
-          %code.ruby
-            keppler dep
-
-        %h3 Keppler Scaffolds
-
-        %p
-          Keppler ofrece la posibilidad de realizar tareas de scaffolds totalmente
-          configurados para adaptarse al administrativo. Para crear un nuevo
-          módulo sólo debes llamar al siguiente comando desde la consola:
-
-        %pre
-          %code.ruby
-            keppler add module ModuleName attribute:type
-
-        %p Por ejemplo, crearemos un scaffold de productos con diversos campos y tipos de datos:
-
-        %pre
-          %code.ruby
-            keppler add module Product title:string description:text quantity:integer price:float arrival_date:date arrival_time:time available:boolean user:references
-
-        %p Luego debemos migrar la tabla a la base de datos con:
-
-        %pre
-          %code.ruby
-            keppler migrate
-
-        %p
-          Si luego deseamos borrar, crear, migrar y llenar la base de datos desde cero,
-          podemos realizarlo ejecutando el comando:
-
-        %pre
-          %code.ruby
-            keppler reset
-
-        %p
-          Por último, si todo ha sido ejecutado debida y correctamente, podemos iniciar
-          el proyecto ejecutando en la consola:
-
-        %pre
-          %code.ruby
-            keppler server
-
-        %h3 SimpleForm con Bootstrap
-
-        %p
-          Se ofrece una integración por defecto entre SimpleForm y Bootstrap, usted tiene la posibilidad de cambiar su funcionalidad en
-        %pre
-          %code.ruby
-            config/initializers/simple_form_bootstrap.rb
-
-
-        %p Aquí algunos ejemplos para la creación de inputs:
-
-        %pre
-          %code.haml
-            :preserve
-               # Inputs de tipo string o textarea
-              = f.input :name
-
-               # Inputs de tipo CKEditor
-              = f.input :description, as: :ckeditor, input_html: { ckeditor: { toolbar: 'mini'} }
-
-               # Inputs de tipo boolean
-              = f.input :public, as: :keppler_boolean
-
-               # Inputs de tipo file
-              = f.input :image, as: :keppler_file
-
-               # Inputs de tipo select
-              = f.input :role_ids, collection: Role.all, label: false, include_blank: "Seleccione un rol"
-
-               # Inputs de tipo radio buttons
-              = f.collection_radio_buttons :option, [['vegan', 'vegan'] ,['vegetarian', 'vegetarian']], :first, :last
-
-               # Inputs de tipo check_boxes
-              = f.collection_check_boxes :options, [['vegan', 'vegan'] ,['vegetarian', 'vegetarian']], :first, :last
-
-               # Inputs de tipo date
-              = f.input :date, input_html: { class: 'datepicker' }
-
-        %strong
-          Nota:
-        %p
-          Puede revisar la documentación de
-          = link_to 'AdminLTE', 'https://adminlte.io'
-          para agregar nuevas integraciones para sus formularios a través de los
-          = link_to 'Wrappers', 'https://github.com/plataformatec/simple_form/wiki/Custom-Wrappers'
-          de SimpleForm.
-
-        -# %h3 Plugins (Módulos)
-        -#
-        -# %p
-        -#   La plataforma permite la adaptación de módulos con facil instalación,
-        -#   algunos de los módulos desarrollados son:
-        -#
-        -# %ul
-        -#   %li
-        -#     = link_to 'Keppler Google Analytics Dashboard', 'https://github.com/slicegroup/keppler_ga_dashboard'
-        -#     -
-        -#     %strong ya viene integrado
-        -#   %li
-        -#     = link_to 'Keppler Blog', 'https://github.com/slicegroup/keppler_blog'
-        -#   %li
-        -#     = link_to 'Keppler Catalogs', 'https://github.com/slicegroup/keppler_catalogs'
-        -#   %li
-        -#     = link_to 'Keppler Contact', 'https://github.com/slicegroup/keppler_contact_us'
-
-    %script{ src: '/assets/app/front.js' }
+	%head 
+		= render 'app/layouts/head'
+		%script{:src => "assets/js/wow.js", :type => "text/javascript"}
+	:javascript
+		wow = new WOW(
+				{
+					animateClass: 'animated',
+					offset:       100,
+					callback:     function(box) {
+						console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+					}
+				}
+			);
+			wow.init();
+	%body
+		%header
+			= render 'app/front/partials/navbar'
+			.single-item#home
+				.img-single{:style => "background-image: url(assets/img/bg-1.jpg); background-size: cover; height: 600px;"}
+					%div
+						%h3 FULL WINTER KIT
+						%h4 Half Jacket + Skiny + Trousers + Boot leather
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt.
+						%h4
+							Price: 120$
+							%span
+								%a{:href => "#"}
+									%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+									Order Now
+				.img-single{:style => "background-image: url(assets/img/bg-1.jpg); background-size: cover; height: 600px;"}
+					%div
+						/ CLASES PARA IDENTIFICAR
+						%h3 FULL WINTER KIT
+						%h4 Half Jacket + Skiny + Trousers + Boot leather
+						%p
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+							tempor incididunt.
+						%h4
+							Price: 120$
+							%span
+								%a{:href => "#"}
+									%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+									Order Now
+				%div
+					.img-single{:style => "background-image: url(assets/img/bg-1.jpg); background-size: cover; height: 600px;"}
+						%div
+							%h3 FULL WINTER KIT
+							%h4 Half Jacket + Skiny + Trousers + Boot leather
+							%p
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt.
+							%h4
+								Price: 120$
+								%span
+									%a{:href => "#"}
+										%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+										Order Now
+		%section#products.products
+			.container-shopy
+				%h3
+					%span NEW
+					ARRIVALS
+				%p.text-center.mt-3 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+				.content-card
+					.card.item-card.wow.bounceInRight{"data-wow-duration" => "1.5s", :style => "width: 18rem;"}
+						= link_to app_product_path do
+							%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-2.jpg"}/
+							.card-body.card-body-products
+								= link_to app_product_path do
+									%p.card-text Rebok Track Jacket
+								%h3 100$
+								.info-products
+									%p Size: s-m-l-xl
+									%ul
+										%li{:style => "background-color: #e94850"}
+										%li{:style => "background-color: #44525f"}
+										%li{:style => "background-color: #43c0fd"}
+										%li{:style => "background-color: #30db79"}
+									%span
+										%i.fa.fa-globe{"aria-hidden" => "true"}
+										%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+										%i.fa.fa-heart{"aria-hidden" => "true"}
+					.card.item-card.wow.bounceInRight{"data-wow-duration" => "1.5s", :style => "width: 18rem;"}
+						= link_to app_product_path do
+							%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-2.jpg"}/
+							.card-body.card-body-products
+								= link_to app_product_path do
+									%p.card-text Rebok Track Jacket
+								%h3 100$
+								.info-products
+									%p Size: s-m-l-xl
+									%ul
+										%li{:style => "background-color: #e94850"}
+										%li{:style => "background-color: #44525f"}
+										%li{:style => "background-color: #43c0fd"}
+										%li{:style => "background-color: #30db79"}
+									%span
+										%i.fa.fa-globe{"aria-hidden" => "true"}
+										%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+										%i.fa.fa-heart{"aria-hidden" => "true"}
+					.card.item-card.wow.bounceInRight{"data-wow-duration" => "2s", :style => "width: 18rem;"}
+						= link_to app_product_path do
+							%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-2.jpg"}/
+							.card-body.card-body-products
+								= link_to app_product_path do
+									%p.card-text Rebok Track Jacket
+								%h3 100$
+								.info-products
+									%p Size: s-m-l-xl
+									%ul
+										%li{:style => "background-color: #e94850"}
+										%li{:style => "background-color: #44525f"}
+										%li{:style => "background-color: #43c0fd"}
+										%li{:style => "background-color: #30db79"}
+									%span
+										%i.fa.fa-globe{"aria-hidden" => "true"}
+										%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+										%i.fa.fa-heart{"aria-hidden" => "true"}
+					.card.item-card.wow.bounceInRight{"data-wow-duration" => "2.5s", :style => "width: 18rem;"}
+						= link_to app_product_path do
+							%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-1.jpg"}/
+							.card-body.card-body-products
+								= link_to app_product_path do
+									%p.card-text Rebok Track Jacket
+								%h3 100$
+								.info-products
+									%p Size: s-m-l-xl
+									%ul
+										%li{:style => "background-color: #e94850"}
+										%li{:style => "background-color: #44525f"}
+										%li{:style => "background-color: #43c0fd"}
+										%li{:style => "background-color: #30db79"}
+									%span
+										%i.fa.fa-globe{"aria-hidden" => "true"}
+										%i.fa.fa-shopping-cart{"aria-hidden" => "true"}
+										%i.fa.fa-heart{"aria-hidden" => "true"}
+				.products-more-view
+					%ul
+						%li.mr-1
+						%li.mr-1
+						%li.mr-1
+				.content-products
+					.products-items-1
+						.container-diamond
+							.content-diamond
+							.products-diamond
+								.text-diamond
+									%p 
+										Sale
+										%br/
+										%span 
+											50%
+						%div
+							%h4 FULL WINTER KIT
+							%p Half Jacket + Skiny + Trousers + Boot leather
+						%div
+							%h5
+								%i.fa.fa-cart-plus{"aria-hidden" => "true"}>
+								120$
+						%div
+					.products-items-2
+						%p
+							adv
+							%span.ml-1 area
+						%h4 470x100
+		%section#hot-deals.hot-deals
+			.container-shopy
+				%h3
+					%span BEST
+					SALES
+				%p.text-center.mt-3 Lorem ipsum dolor sit amet, consectetur adipisicing elit
+				.content-products
+					.card.item-card-deals.wow.bounceInRight{"data-wow-duration" => "1s", :style => "width: 18rem;"}
+						%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-4.jpg"}/
+						.card-body.card-body-deals
+							%h4.card-text Rebok Track Jacket
+							.card-deals-flex  
+								%span.star
+									%i.fa.fa-star{"aria-hidden" => "true"}
+									%i.fa.fa-star{"aria-hidden" => "true"}
+									%i.fa.fa-star{"aria-hidden" => "true"}
+									%i.fa.fa-star{"aria-hidden" => "true"}
+								%h5 100$
+							%span.card-hover
+								%a{:href => "#"}
+									%i.fa.fa-shopping-cart.mr-2{"aria-hidden" => "true"}
+									Add to cart
+					.card.item-card-deals.wow.bounceInRight{"data-wow-duration" => "1.5s", :style => "width: 18rem;"}
+						%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-4.jpg"}/
+						.card-body.card-body-deals
+							%h4.card-text Rebok Track Jacket
+							.card-deals-flex  
+								%span.star
+									%i.fa.fa-star{"aria-hidden" => "true"}
+									%i.fa.fa-star{"aria-hidden" => "true"}
+									%i.fa.fa-star{"aria-hidden" => "true"}
+									%i.fa.fa-star{"aria-hidden" => "true"}
+								%h5 100$
+							%span.card-hover
+								%a{:href => "#"}
+									%i.fa.fa-shopping-cart.mr-2{"aria-hidden" => "true"}
+									Add to cart
+					.card.item-card-deals.wow.bounceInRight{"data-wow-duration" => "2s", :style => "width: 18rem;"}
+						%img.card-img-top{:alt => "Card image cap", :src => "assets/img/product-4.jpg"}/
+						.card-body.card-body-deals
+							%h4.card-text Rebok Track Jacket
+							.card-deals-flex  
+								%span.star
+									%i.fa.fa-star{"aria-hidden" => "true"}
+									%i.fa.fa-star{"aria-hidden" => "true"}
+									%i.fa.fa-star{"aria-hidden" => "true"}
+									%i.fa.fa-star{"aria-hidden" => "true", :style => "color: #ebebec"}
+								%h5 100$
+							%span.card-hover
+								%a{:href => "#"}
+									%i.fa.fa-shopping-cart.mr-2{"aria-hidden" => "true"}
+									Add to cart
+		%section#about.about
+			.container-shopy
+				.content-about
+					%div
+						%h3
+							NEWS
+							%br/
+							LETTER
+						%p join us now to get all news and special offers
+					%div
+						%form
+							%i.fa.fa-envelope.mr-1{"aria-hidden" => "true"}
+							%input.about-email{:name => "email", :placeholder => "type your email here", :type => "email"}/
+							%button.btn-orange
+								%a{:href => "#"} join us
+		%footer#contact
+			.container-shopy.contact
+				%div
+					%a{:href => "#home"}
+						%img{:style => "width: 150px;", :src => "assets/img/logo.jpg"}/
+					%p Shopy c 2015. your copy right here
+				%ul
+					%li about us
+					%li contact us
+					%li support
+				%ul
+					%li our feed
+					%li terms and conditions
+					%li our privacy
+				%ul
+					%li join us
+					%li live support
+				.contact-payment
+					%h3 Payment Methods
+					%span
+						%i.fab.fa-cc-mastercard{"aria-hidden" => "true"}
+						%i.fab.fa-cc-paypal{"aria-hidden" => "true"}
+						%i.fab.fa-cc-visa{"aria-hidden" => "true"}
+		%script{:src => "assets/js/jquery-3.2.1.min.js"}
+		%script{:src => "assets/js/bootstrap.min.js", :type => "text/javascript"}
+		%script{:src => "https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js", :type => "text/javascript"}
+		%script{:src => "assets/js/main.js", :type => "text/javascript"}
